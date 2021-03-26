@@ -16,11 +16,25 @@ export class ContactsService {
   }
   
   createContact(fname: string, lname: string, phone?: string, email?: string) {
-    // this.http.post(ROOT_URL + '/contacts', data);
+    const data: any = {
+      fname: fname,
+      lname: lname,
+      phone: phone,
+      email: email
+    }
+
+    return this.http.post(this.ROOT_URL + '/contacts', data);
   };
 
   updateContact(id: string, fname?: string, lname?: string, phone?: string, email?: string) {
-    // this.http.patch(ROOT_URL + '/contacts', data);
+    const data: any = {
+      fname: fname,
+      lname: lname,
+      phone: phone,
+      email: email
+    }
+    
+    return this.http.patch(this.ROOT_URL + '/contacts/id/' + id, data);
   };
 
   deleteContact(id: string) {
