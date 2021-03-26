@@ -4,6 +4,8 @@
     <td>Last Name</td>
     <td>Phone</td>
     <td>Email</td>
+    <td></td>
+    <td></td>
   </thead>
   <tbody>
     <tr *ngFor="let contact of contacts | async">
@@ -11,6 +13,8 @@
       <td>{{ contact.lname }}</td>
       <td>{{ contact.phone }}</td>
       <td>{{ contact.email }}</td>
+      <td>Edit</td>
+      <td>Delete</td>
     </tr>
   </tbody>
 </table>
