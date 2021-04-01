@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Contact } from 'src/interface/contact.interface';
+import { Contact } from 'src/interfaces/contact.interface';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -18,10 +18,13 @@ export class ContactsService {
   createContact(fname: string, lname: string, phone?: string, email?: string) {
     const data: any = {
       fname: fname,
-      lname: lname,
-      phone: phone,
-      email: email
-    }
+      lname: lname
+    };
+
+    if (phone && phone !== "")
+      data.phone = phone;
+    if (email && email !== "")
+      data.email = email;
 
     return this.http.post(this.ROOT_URL + '/contacts', data);
   };

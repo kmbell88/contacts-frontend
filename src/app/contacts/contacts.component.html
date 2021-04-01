@@ -18,3 +18,10 @@
     </tr>
   </tbody>
 </table>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="fname" placeholder="First name">
+  <input type="text" formControlName="lname" placeholder="Last name">
+  <input type="text" formControlName="phone" placeholder="Phone Number (optional)">
+  <input type="text" formControlName="email" placeholder="Email (optional)">
+  <button id="submitContact">Add Contact</button>
+</form>
